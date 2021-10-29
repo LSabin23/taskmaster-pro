@@ -279,4 +279,8 @@ $('#trash').droppable({
 // load tasks for the first time
 loadTasks();
 
-
+setInterval(function () {
+  $('.card .list-group-item').each(function(index, el) {
+    auditTask(el)
+  })
+}, (1000 * 60) * 30) // same as saying 1800000, but easier to convert and read
